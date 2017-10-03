@@ -12,14 +12,17 @@ public class StoryRestricted {
         }
         String name = console.readLine("Enter your name: ");
         String adjective = console.readLine("Enter an adjective: ");
-        String noun = console.readLine("Enter a noun: ");
-        // comparing words to impose restriction
-        if (noun.equalsIgnoreCase("stupid") ||
-            noun.equalsIgnoreCase("idiot") ||
-            noun.equalsIgnoreCase("fool")) {
-            console.printf("That language is not allowed. Exiting ... \n");
-            System.exit(0);
-        }
+        String noun;
+        boolean isInvalidWord;
+        do {
+            noun = console.readLine("Enter a noun: ");
+            isInvalidWord = (noun.equalsIgnoreCase("stupid") ||
+                             noun.equalsIgnoreCase("idiot") ||
+                             noun.equalsIgnoreCase("fool"));
+            if (isInvalidWord) {
+                console.printf("That language is not allowed. Try again ...\n\n");
+            }
+        } while (isInvalidWord);
         console.printf("%s is %s %s.\n", name, adjective, noun);
     }
 }
