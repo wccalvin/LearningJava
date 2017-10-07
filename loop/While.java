@@ -3,7 +3,7 @@ public class While {
         System.out.println("Example for while loop ...");
         int count = 1;
         while (count < 10) {
-            System.out.println("Current count is " + count);
+            System.out.printf("Current count is %d\n", count);
             count++;
         }
     }
